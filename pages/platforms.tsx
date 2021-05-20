@@ -47,14 +47,17 @@ const AllPlatforms: React.FC<platforms> = ({ platforms }) => {
                           className="img-fluid"
                           src={platform.platform_logo_url}
                         />
+                      </Card.Text>
+                      <Card.Text style={{ textAlign: "center" }}>
                         <span>
                           See more in formation about {platform.name}
-                          copy paste this link into your browser {platform.url}
+                          {"\n"}
+                          <a href={platform.url}>visit platform site</a>
                         </span>
                       </Card.Text>
                     </Card.Body>
                     <Card.Footer>
-                      <Card.Text style={{ textAlign: "right" }}>
+                      <Card.Text style={{ textAlign: "center" }}>
                         <Link href={`/platform/${platform.slug}`}>
                           <a>See all Games for {platform.name}</a>
                         </Link>

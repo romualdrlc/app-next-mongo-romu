@@ -26,11 +26,16 @@ const AllGames: React.FC<games> = ({ games }) => {
                         <span>
                           {game.cover === undefined ? (
                             <img
+                              style={{ width: "250px", height: "250px" }}
                               className="img-fluid"
                               src="/pointinterro.jpeg"
                             />
                           ) : (
-                            <img className="img-fluid" src={game.cover.url} />
+                            <img
+                              style={{ width: "250px", height: "250px" }}
+                              className="img-fluid"
+                              src={game.cover.url}
+                            />
                           )}
                         </span>
                         <span>{game.price / 100} €</span>
