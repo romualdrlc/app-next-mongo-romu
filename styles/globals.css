@@ -14,3 +14,14 @@ a {
 * {
   box-sizing: border-box;
 }
+@media (min-width: 34em) {
+  .card-deck > .card {
+    width: 29%;
+    flex-wrap: wrap;
+    flex: initial;
+  }
+}
+.card .card-block {
+  max-height: 300px;
+  overflow: auto;
+}
