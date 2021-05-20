@@ -1,4 +1,6 @@
 import { GetServerSideProps } from "next";
+import { useState, useEffect } from "react";
+import { Button } from "react-bootstrap";
 
 import { getDatabase } from "../../components/database";
 
@@ -7,6 +9,8 @@ type onegame = {
 };
 
 const oneGame: React.FC<onegame> = ({ onegame }) => {
+  const [displayScreen, setDisplayScrenn] = useState<Boolean>();
+
   return (
     <>
       <div className="media bg-secondary p-3">
@@ -30,6 +34,17 @@ const oneGame: React.FC<onegame> = ({ onegame }) => {
             <p>{onegame.summary}</p>
           )}
         </div>
+      </div>
+      <div>
+        {onegame.screenshots.map((screen) =>
+          screen ? (
+            <span key={screen}>
+              <img src={screen} />
+            </span>
+          ) : (
+            <span>No picture for this game</span>
+          )
+        )}
       </div>
     </>
   );

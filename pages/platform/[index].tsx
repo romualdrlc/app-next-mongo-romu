@@ -17,42 +17,40 @@ const oneGamePerPlatform: React.FC<allGamesPlatform> = ({
         <Row className="justify-content-md-center">
           {allGamesPlatform.map((listGame) => {
             return (
-              <>
-                <Col sm={4} className="d-flex">
-                  <CardDeck className="d-flex align-content-stretch flex-wrap">
-                    <Card style={{ width: "20rem" }}>
-                      <Card.Body>
-                        <Card.Title style={{ textAlign: "center" }}>
-                          {listGame.name}
-                        </Card.Title>
-                        <Card.Text style={{ textAlign: "center" }}>
-                          <p>
-                            {listGame.cover === undefined ? (
-                              <img
-                                className="img-fluid"
-                                src="/pointinterro.jpeg"
-                              />
-                            ) : (
-                              <img
-                                className="img-fluid"
-                                src={listGame.cover.url}
-                              />
-                            )}
-                          </p>
-                          <p>{listGame.price / 100} €</p>
-                        </Card.Text>
-                      </Card.Body>
-                      <Card.Footer>
-                        <Card.Text style={{ textAlign: "right" }}>
-                          <Link href={`/game/${listGame.slug}`}>
-                            <a>See more {listGame.name}</a>
-                          </Link>
-                        </Card.Text>
-                      </Card.Footer>
-                    </Card>
-                  </CardDeck>
-                </Col>
-              </>
+              <Col sm={4} className="d-flex" key={listGame._id}>
+                <CardDeck className="d-flex align-content-stretch flex-wrap">
+                  <Card style={{ width: "20rem" }}>
+                    <Card.Body>
+                      <Card.Title style={{ textAlign: "center" }}>
+                        {listGame.name}
+                      </Card.Title>
+                      <Card.Text style={{ textAlign: "center" }}>
+                        <span>
+                          {listGame.cover === undefined ? (
+                            <img
+                              className="img-fluid"
+                              src="/pointinterro.jpeg"
+                            />
+                          ) : (
+                            <img
+                              className="img-fluid"
+                              src={listGame.cover.url}
+                            />
+                          )}
+                        </span>
+                        <span>{listGame.price / 100} €</span>
+                      </Card.Text>
+                    </Card.Body>
+                    <Card.Footer>
+                      <Card.Text style={{ textAlign: "right" }}>
+                        <Link href={`/game/${listGame.slug}`}>
+                          <a>See more {listGame.name}</a>
+                        </Link>
+                      </Card.Text>
+                    </Card.Footer>
+                  </Card>
+                </CardDeck>
+              </Col>
             );
           })}
         </Row>

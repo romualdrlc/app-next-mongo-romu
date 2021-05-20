@@ -15,7 +15,7 @@ const AllGames: React.FC<games> = ({ games }) => {
         <Row className="justify-content-md-center">
           {games.map((game) => {
             return (
-              <Col sm={4} className="d-flex">
+              <Col sm={4} className="d-flex" key={game.slug}>
                 <CardDeck className="d-flex align-content-stretch flex-wrap">
                   <Card style={{ width: "20rem" }}>
                     <Card.Body>
@@ -23,7 +23,7 @@ const AllGames: React.FC<games> = ({ games }) => {
                         {game.name}
                       </Card.Title>
                       <Card.Text style={{ textAlign: "center" }}>
-                        <p>
+                        <span>
                           {game.cover === undefined ? (
                             <img
                               className="img-fluid"
@@ -32,8 +32,8 @@ const AllGames: React.FC<games> = ({ games }) => {
                           ) : (
                             <img className="img-fluid" src={game.cover.url} />
                           )}
-                        </p>
-                        <p>{game.price / 100} €</p>
+                        </span>
+                        <span>{game.price / 100} €</span>
                       </Card.Text>
                     </Card.Body>
                     <Card.Footer>
