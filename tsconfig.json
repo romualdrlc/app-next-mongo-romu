@@ -19,7 +19,8 @@
     "**/*.ts",
     "**/*.tsx",
     "components/layout.tsx",
-    "next.config.js"
+    "next.config.js",
+    "pages/api/login.js"
   ],
   "exclude": ["node_modules"]
 }
