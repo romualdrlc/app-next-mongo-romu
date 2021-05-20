@@ -32,11 +32,14 @@ const AllPlatforms: React.FC<platforms> = ({ platforms }) => {
         <Row className="justify-content-md-center">
           {selectPlatform.map((platform) => {
             return (
-              <Col sm={4} className="d-flex">
+              <Col sm={4} className="d-flex" key={platform.slug}>
                 <CardDeck className="d-flex align-content-stretch flex-wrap">
-                  <Card key={platform.slug}>
+                  <Card style={{ width: "20rem" }}>
                     <Card.Body>
-                      <Card.Title style={{ textAlign: "center" }}>
+                      <Card.Title
+                        style={{ textAlign: "center" }}
+                        key={platform.slug}
+                      >
                         {platform.name}
                       </Card.Title>
                       <Card.Text style={{ textAlign: "center" }}>
@@ -44,10 +47,10 @@ const AllPlatforms: React.FC<platforms> = ({ platforms }) => {
                           className="img-fluid"
                           src={platform.platform_logo_url}
                         />
-                        <p>
+                        <span>
                           See more in formation about {platform.name}
                           copy paste this link into your browser {platform.url}
-                        </p>
+                        </span>
                       </Card.Text>
                     </Card.Body>
                     <Card.Footer>
