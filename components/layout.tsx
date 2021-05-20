@@ -28,7 +28,7 @@ export const Layout: React.FC = ({ children }) => {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-      <div className="bg-info text-white">
+      <div className="bg-info text-black">
         <article>{children}</article>
       </div>
       <footer className="bg-dark text-center text-white">
