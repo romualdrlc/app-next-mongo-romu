@@ -1,6 +1,6 @@
 import { GetServerSideProps } from "next";
-import { Card, CardDeck, Container, Row, Col } from "react-bootstrap";
-import { getDatabase } from "../database";
+
+import { getDatabase } from "../../components/database";
 
 type onegame = {
   onegame: any;

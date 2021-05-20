@@ -1,15 +1,7 @@
 import { GetServerSideProps } from "next";
 import Link from "next/link";
-import { getDatabase } from "./database";
-import {
-  Card,
-  CardColumns,
-  CardDeck,
-  CardGroup,
-  Container,
-  Row,
-  Col,
-} from "react-bootstrap";
+import { getDatabase } from "../components/database";
+import { Card, CardDeck, Container, Row, Col } from "react-bootstrap";
 
 type platforms = {
   platforms: any[];
