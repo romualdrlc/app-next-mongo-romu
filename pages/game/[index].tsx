@@ -1,4 +1,5 @@
 import { GetServerSideProps } from "next";
+import { useState } from "react";
 
 import { getDatabase } from "../../components/database";
 
@@ -7,6 +8,7 @@ type onegame = {
 };
 
 const oneGame: React.FC<onegame> = ({ onegame }) => {
+  const [displayScreen, setDisplayScreen] = useState<Boolean>();
   return (
     <>
       <div className="media bg-secondary p-3">
@@ -31,11 +33,15 @@ const oneGame: React.FC<onegame> = ({ onegame }) => {
           )}
         </div>
       </div>
-      <div>
+      <div className="bloc-screen">
         {onegame.screenshots.map((screen) =>
           screen ? (
             <span key={screen}>
-              <img src={screen} />
+              <img
+                src={screen}
+                alt="Responsive image"
+                style={{ width: "250px", height: "250px" }}
+              />
             </span>
           ) : (
             <span>No picture for this game</span>

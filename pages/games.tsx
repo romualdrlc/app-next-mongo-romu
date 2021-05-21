@@ -3,11 +3,19 @@ import Link from "next/link";
 import { getDatabase } from "../components/database";
 import { Card, CardDeck, Container, Row, Col } from "react-bootstrap";
 
-type games = {
-  games: any[];
+type allgames = {
+  games: {
+    slug: string;
+    name: string;
+    price: number;
+    cover: {
+      url: string;
+    };
+    [key: string]: any;
+  };
 };
 
-const AllGames: React.FC<games> = ({ games }) => {
+const AllGames: React.FC<allgames> = ({ games }) => {
   return (
     <>
       <Container fluid>

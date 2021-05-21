@@ -3,17 +3,24 @@ import Link from "next/link";
 import { getDatabase } from "../components/database";
 import { Card, CardDeck, Container, Row, Col } from "react-bootstrap";
 
-type platforms = {
-  platforms: any[];
+type allPlatforms = {
+  platforms: {
+    slug: string;
+    name: string;
+    price: number;
+    cover: {
+      url: string;
+    };
+    [key: string]: any;
+  };
 };
-
 type formatPlatform = {
   name: string;
   slug: string;
   [key: string]: any;
 };
 
-const AllPlatforms: React.FC<platforms> = ({ platforms }) => {
+const AllPlatforms: React.FC<allPlatforms> = ({ platforms }) => {
   const selectPlatform: formatPlatform[] = [];
 
   platforms.forEach((platform) => {
