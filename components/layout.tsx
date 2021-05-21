@@ -23,9 +23,8 @@ export const Layout: React.FC = ({ children }) => {
             <Nav.Link href="/platforms">Platforms</Nav.Link>
           </Nav>
           <Nav>
-            <Nav.Link href={`/login/toto`}>login</Nav.Link>
+            <Nav.Link href={`/profil`}>login</Nav.Link>
             <Nav.Link href="#top">Top of page</Nav.Link>
-            {/* <Nav.Link href="/">Back Home Page</Nav.Link> */}
           </Nav>
         </Navbar.Collapse>
       </Navbar>

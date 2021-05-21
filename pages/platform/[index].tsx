@@ -29,11 +29,13 @@ const oneGamePerPlatform: React.FC<allGamesPlatform> = ({
                           {listGame.cover === undefined ? (
                             <img
                               className="img-fluid"
+                              style={{ width: "250px", height: "250px" }}
                               src="/pointinterro.jpeg"
                             />
                           ) : (
                             <img
                               className="img-fluid"
+                              style={{ width: "250px", height: "250px" }}
                               src={listGame.cover.url}
                             />
                           )}
@@ -42,7 +44,7 @@ const oneGamePerPlatform: React.FC<allGamesPlatform> = ({
                       </Card.Text>
                     </Card.Body>
                     <Card.Footer>
-                      <Card.Text style={{ textAlign: "right" }}>
+                      <Card.Text style={{ textAlign: "center" }}>
                         <Link href={`/game/${listGame.slug}`}>
                           <a>See more {listGame.name}</a>
                         </Link>
@@ -69,8 +71,6 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     .collection("games")
     .find({ "platform.slug": context.params.index })
     .toArray();
-
-  console.log(allGamesPlatform);
 
   return {
     props: {
